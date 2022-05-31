@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Test Result: ]]>
+    </line>
+    <line>
+      <![CDATA[StatusId : b9030a7e-6d8f-498d-5cb4-9817]]>
+    </line>
+    <line>
+      <![CDATA[URL : https://eureka-server-a2.cloud.pcftest.com/]]>
+    </line>
+    <line>
+      <![CDATA[Application : EUREKA-CLIENT]]>
+    </line>
+    <line>
+      <![CDATA[Expected Application : = EUREKA-CLIENT]]>
+    </line>
+    <line>
+      <![CDATA[Actual Application : = EUREKA-CLIENT]]>
+    </line>
+    <line>
+      <![CDATA[Application : EUREKA-HYSTRIX]]>
+    </line>
+    <line>
+      <![CDATA[Expected Application : = EUREKA-HYSTRIX]]>
+    </line>
+    <line>
+      <![CDATA[Actual Application : = EUREKA-HYSTRIX]]>
+    </line>
+    <line>
+      <![CDATA[Expected Result : Status = UP]]>
+    </line>
+    <line>
+      <![CDATA[Actual Result : Status = UP]]>
+    </line>
+    <line>
+      <![CDATA[Result : Passed]]>
+    </line>
+  </reporter-output>
+  <suite name="Default Suite" duration-ms="12095" started-at="2022-05-23T12:55:49 IST" finished-at="2022-05-23T12:56:01 IST">
+    <groups>
+    </groups>
+    <test name="deploymentValidation" duration-ms="12095" started-at="2022-05-23T12:55:49 IST" finished-at="2022-05-23T12:56:01 IST">
+      <class name="test.firstPageTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:test.firstPageTest@5f9d02cb]" name="setup" is-config="true" duration-ms="11287" started-at="2022-05-23T12:55:49 IST" finished-at="2022-05-23T12:56:00 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="firstPageTest()[pri:0, instance:test.firstPageTest@5f9d02cb]" name="firstPageTest" duration-ms="653" started-at="2022-05-23T12:56:00 IST" finished-at="2022-05-23T12:56:01 IST">
+          <reporter-output>
+            <line>
+              <![CDATA[Test Result: ]]>
+            </line>
+            <line>
+              <![CDATA[StatusId : b9030a7e-6d8f-498d-5cb4-9817]]>
+            </line>
+            <line>
+              <![CDATA[URL : https://eureka-server-a2.cloud.pcftest.com/]]>
+            </line>
+            <line>
+              <![CDATA[Application : EUREKA-CLIENT]]>
+            </line>
+            <line>
+              <![CDATA[Expected Application : = EUREKA-CLIENT]]>
+            </line>
+            <line>
+              <![CDATA[Actual Application : = EUREKA-CLIENT]]>
+            </line>
+            <line>
+              <![CDATA[Application : EUREKA-HYSTRIX]]>
+            </line>
+            <line>
+              <![CDATA[Expected Application : = EUREKA-HYSTRIX]]>
+            </line>
+            <line>
+              <![CDATA[Actual Application : = EUREKA-HYSTRIX]]>
+            </line>
+            <line>
+              <![CDATA[Expected Result : Status = UP]]>
+            </line>
+            <line>
+              <![CDATA[Actual Result : Status = UP]]>
+            </line>
+            <line>
+              <![CDATA[Result : Passed]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- firstPageTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.firstPageTest@5f9d02cb]" name="tearDown" is-config="true" duration-ms="93" started-at="2022-05-23T12:56:01 IST" finished-at="2022-05-23T12:56:01 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- test.firstPageTest -->
+    </test> <!-- deploymentValidation -->
+  </suite> <!-- Default Suite -->
+</testng-results>

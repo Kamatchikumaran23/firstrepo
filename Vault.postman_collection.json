@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "b9e77f28-7371-4646-b54e-2efafa529b4c",
+		"name": "Vault_Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://vproxy.us-east.philips-healthsuite.com/v1/auth/approle/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code check\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"role_id\": \"50648aa3-fa18-6cad-5065-2c50219ead98\",\r\n\"secret_id\": \"a2a53398-81ad-a695-689d-c47d6f09360f\"}\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vproxy.us-east.philips-healthsuite.com/v1/auth/approle/login",
+					"protocol": "https",
+					"host": [
+						"vproxy",
+						"us-east",
+						"philips-healthsuite",
+						"com"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"approle",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://vproxy.us-east.philips-healthsuite.com/v1/cf/5ea2619a-a8e1-4e57-bb08-edc4567d57f0/secret/nikhil",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code Check\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "PJmHRCf9fi51qnUc54G7ddm6",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"username\": \"Test12345\",\r\n\"password\": \"P@ssword2323\"\r\n}"
+				},
+				"url": {
+					"raw": "https://vproxy.us-east.philips-healthsuite.com/v1/cf/5ea2619a-a8e1-4e57-bb08-edc4567d57f0/secret/nikhil",
+					"protocol": "https",
+					"host": [
+						"vproxy",
+						"us-east",
+						"philips-healthsuite",
+						"com"
+					],
+					"path": [
+						"v1",
+						"cf",
+						"5ea2619a-a8e1-4e57-bb08-edc4567d57f0",
+						"secret",
+						"nikhil"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://vproxy.us-east.philips-healthsuite.com/v1/cf/5ea2619a-a8e1-4e57-bb08-edc4567d57f0/secret/nikhil",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code check\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "PJmHRCf9fi51qnUc54G7ddm6",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://vproxy.us-east.philips-healthsuite.com/v1/cf/5ea2619a-a8e1-4e57-bb08-edc4567d57f0/secret/nikhil",
+					"protocol": "https",
+					"host": [
+						"vproxy",
+						"us-east",
+						"philips-healthsuite",
+						"com"
+					],
+					"path": [
+						"v1",
+						"cf",
+						"5ea2619a-a8e1-4e57-bb08-edc4567d57f0",
+						"secret",
+						"nikhil"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

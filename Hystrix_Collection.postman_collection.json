@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "d52294ff-5208-4e6a-90d3-e54b7225325c",
+		"name": "Hystrix_Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://eureka-server-a2.cloud.pcftest.com/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status of the Application\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"UP\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Application Registration\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"EUREKA-HYSTRIX\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than limit\", function() {\r",
+							"var limit = 3000;\r",
+							"\r",
+							"pm.expect(pm.response.responseTime).to.be.below(limit);  \r",
+							"if (pm.response.responseTime < limit) {      \r",
+							"    console.log(\"Fallback hello service\");\r",
+							"} else {\r",
+							"    console.log(\"hello\");\r",
+							"}\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://eureka-server-a2.cloud.pcftest.com/",
+					"protocol": "https",
+					"host": [
+						"eureka-server-a2",
+						"cloud",
+						"pcftest",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://eureka-hystrix.cloud.pcftest.com/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Application Validation\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Fallback hello service\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://eureka-hystrix.cloud.pcftest.com/",
+					"protocol": "https",
+					"host": [
+						"eureka-hystrix",
+						"cloud",
+						"pcftest",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://eureka-client.cloud.pcftest.com/hello",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Application Validation\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Hello from 10.10.81.64:61270\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://eureka-client.cloud.pcftest.com/hello",
+					"protocol": "https",
+					"host": [
+						"eureka-client",
+						"cloud",
+						"pcftest",
+						"com"
+					],
+					"path": [
+						"hello"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

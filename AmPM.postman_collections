@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "8dd37893-f0c2-4441-86b7-92ac60df724c",
+		"name": "AmPM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://eureka-server.cloud.pcftest.com/eureka/apps",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var schema = \r",
+							"{\r",
+							"    \"$schema\": \"http://json-schema.org/draft-06/schema\",\r",
+							"    \"$id\": \"http://example.com/example.json\",\r",
+							"    \"type\": \"array\",\r",
+							"    \"title\": \"The root schema\",\r",
+							"    \"examples\": [\r",
+							"        [\r",
+							"            {\r",
+							"                \"EUREKA SERVER\": \"Zone\",\r",
+							"                \"AMI:\": \"\"\r",
+							"            },\r",
+							"            {\r",
+							"                \"EUREKA SERVER\": \"instance-id\",\r",
+							"                \"AMI:\": \"\"\r",
+							"            }\r",
+							"        ]\r",
+							"    ],\r",
+							"    \"items\": {\r",
+							"        \"$id\": \"#/items\",\r",
+							"        \"anyOf\": [\r",
+							"            {\r",
+							"                \"$id\": \"#/items/anyOf/0\",\r",
+							"                \"type\": \"object\",\r",
+							"                \"title\": \"The first anyOf schema\",\r",
+							"                \"examples\": [\r",
+							"                    {\r",
+							"                        \"EUREKA SERVER\": \"Zone\",\r",
+							"                        \"AMI:\": \"\"\r",
+							"                    }\r",
+							"                ],\r",
+							"                \"required\": [\r",
+							"                    \"EUREKA SERVER\",\r",
+							"                    \"AMI:\"\r",
+							"                ],\r",
+							"                \"properties\": {\r",
+							"                    \"EUREKA SERVER\": {\r",
+							"                        \"$id\": \"#/items/anyOf/0/properties/EUREKA%20SERVER\",\r",
+							"                        \"type\": \"string\",\r",
+							"                        \"title\": \"The EUREKA SERVER schema\",\r",
+							"                        \"examples\": [\r",
+							"                            \"Zone\"\r",
+							"                        ]\r",
+							"                    },\r",
+							"                    \"AMI:\": {\r",
+							"                        \"$id\": \"#/items/anyOf/0/properties/AMI%3A\",\r",
+							"                        \"type\": \"string\",\r",
+							"                        \"title\": \"The AMI: schema\",\r",
+							"                        \"examples\": [\r",
+							"                            \"\"\r",
+							"                        ]\r",
+							"                    }\r",
+							"                }\r",
+							"            }\r",
+							"        ]\r",
+							"    }\r",
+							"}\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Status of the Application\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"UP\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "eureka-server.cloud.pcftest.com/eureka/apps",
+					"host": [
+						"eureka-server",
+						"cloud",
+						"pcftest",
+						"com"
+					],
+					"path": [
+						"eureka",
+						"apps"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://EurekaServer-demo.cloud.pcftest.com",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let key = pm.environment.get(\"api_key\")\r",
+							"\r",
+							"console.log('Here is my key: ${key}')"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{api_key}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://EurekaServer-demo.cloud.pcftest.com",
+					"protocol": "http",
+					"host": [
+						"EurekaServer-demo",
+						"cloud",
+						"pcftest",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://eureka-server.cloud.pcftest.com/eureka/v2/apps",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://eureka-server.cloud.pcftest.com/eureka/v2/apps",
+					"protocol": "http",
+					"host": [
+						"eureka-server",
+						"cloud",
+						"pcftest",
+						"com"
+					],
+					"path": [
+						"eureka",
+						"v2",
+						"apps"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
