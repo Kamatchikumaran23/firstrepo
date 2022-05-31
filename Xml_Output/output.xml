@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="14.964">
+<testcase classname="Testing for the Saucedemo application" name="Selecting the Minimum price" time="11.032">
+<system-out><![CDATA[Given User should login with the url........................................passed
+When the user enters the username and password..............................passed
+Then Click on the login button..............................................passed
+And check the url matches with the expected one.............................passed
+Then To get the Maximum price from the listed price.........................passed
+And Validation of the button using assertion................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Testing for the Saucedemo application" name="Selecting the Minimum price 2" time="3.669">
+<system-out><![CDATA[Given User should login with the url........................................passed
+When the user enters the username and password..............................passed
+Then Click on the login button..............................................passed
+And check the url matches with the expected one.............................passed
+Then To get the Minimum price from the listed price.........................passed
+And Validation of the button using assertion................................passed
+]]></system-out>
+</testcase>
+</testsuite>
